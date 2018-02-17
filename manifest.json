@@ -1,0 +1,23 @@
+{
+	"name" : "myjisho",
+	"description" : "Convient Jisho Extention",
+	"version" : "1.0",
+	"manifest_version" : 2,
+	"commands": {
+		"_execute_browser_action": {
+			"suggested_key": {"default": "Ctrl+Q"}
+		}
+	},
+	"browser_action" : {
+		"default_icon" : "jisho.png"
+	},
+	"background": {
+		"scripts": ["bg.js"]
+	},
+	"content_scripts": [
+		{
+			"matches": [ "http://*/*", "https://*/*" ],
+			"js": ["content.js"]
+		}
+	]
+}
